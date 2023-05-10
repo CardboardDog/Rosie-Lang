@@ -5,9 +5,9 @@ int aint = 1
 bool abool = false
 fn nope(){
     if(abool){
-        return 1;
+        return 1
     }else{
-        return 0;
+        return 0
     }
 }
 nope()
