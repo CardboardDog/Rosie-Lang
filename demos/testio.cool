@@ -1,0 +1,5 @@
+add io/io
+io.out("Hello (:")
+fn test(){
+    io.out("called a function")
+}

@@ -1,0 +1,6 @@
+add include/_io
+mode header
+
+fn out(str in){
+    _IO._out(in)
+}
