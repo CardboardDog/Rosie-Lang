@@ -1,0 +1,6 @@
+add files/file_system
+add io/io
+io.out("file name?\n>>")
+str name = io.in()
+file_system.reader read = file_system.reader(name)
+io.out(read.read())

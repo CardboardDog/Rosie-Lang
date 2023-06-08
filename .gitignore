@@ -1,1 +1,11 @@
 .vscode/
+support/
+__pycache__/
+__ROSIE_BIN__/
+Debugger/bin
+.dblite
+test.bat
+bin/
+compiler/dist/
+bugs/
+compiler/bin

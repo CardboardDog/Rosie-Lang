@@ -1,0 +1,8 @@
+add hxx include/_io
+mode header
+fn out(str in){
+    _IO._out(in)
+}
+fn in(){
+    return _IO._in()
+}

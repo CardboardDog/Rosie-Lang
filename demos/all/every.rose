@@ -1,0 +1,32 @@
+add io/io
+str astring = "hello"
+int aint = 1
+var unknown = "hmm..."
+bool abool = false
+@@ multiline comment
+line 1
+line 2
+line 3 
+@@
+@ comment
+fn nope(int cookie, bool mybool){
+    if(mybool){
+        return 1
+    }else{
+        return 0
+    }
+}
+aint = nope(2,abool)
+io.out(astring)
+class hello{
+    hello(str name){
+        io.out(name)
+    }
+}
+hello say = hello("hello")
+list str mylist = ["a","b","c","d"];
+for(i in 4){
+    io.out(mylist[i])
+}
+
+io.out(mylist[0])

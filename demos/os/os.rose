@@ -1,0 +1,4 @@
+add io/io
+add system/os
+io.out(os.name()+"\ncreate directory with terminal>>")
+os.terminal("mkdir "+io.in())

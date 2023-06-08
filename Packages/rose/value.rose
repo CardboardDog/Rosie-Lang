@@ -1,0 +1,20 @@
+add hxx inc/convert
+mode header
+fn string(int integer){
+    return _CONV.mk_str_int(integer)
+}
+fn string(bool boolean){
+    return _CONV.mk_str_bool(boolean)
+}
+fn boolean(str string){
+    return _CONV.mk_bool_str(string)
+}
+fn boolean(int integer){
+    return _CONV.mk_bool_int(integer)
+}
+fn integer(bool boolean){
+    return _CONV.mk_int_bool(boolean)
+}
+fn integer(str string){
+    return _CONV.mk_int_str(string)
+}

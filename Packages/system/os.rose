@@ -1,0 +1,8 @@
+add hxx headers/_os
+mode header
+fn terminal(str cmd){
+    return _OS._terminal(cmd)
+}
+fn name(){
+    return _OS._osname()
+}

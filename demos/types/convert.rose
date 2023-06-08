@@ -1,0 +1,23 @@
+add rose/value
+add io/io
+@ converting to strings
+int a = 1;
+str b = value.string(a)
+io.out(b)
+bool c = true;
+str d = value.string(c)
+io.out("\n"+d)
+@ converting to booleans
+if(value.boolean("true")){
+    io.out("\ntrue")
+}
+if(value.boolean(1)){
+    io.out("\ntrue")
+}
+@ converting to int
+if(value.integer("20")>10){
+    io.out("\ninteger(\"20\")>10")
+}
+if(value.integer(true)==1){
+    io.out("\ninteger(true)==1")
+}

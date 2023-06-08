@@ -1,0 +1,8 @@
+import shutil
+import os
+Program("debugger","debug.cxx")
+try:
+    os.remove("C:/Program Files/rosie/bin/debugger.exe")
+except:
+    pass
+#shutil.copytree(os.getcwd()+"//debugger.exe","C:/Program Files/rosie/bin/debugger.exe")

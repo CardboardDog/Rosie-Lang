@@ -1,0 +1,26 @@
+add hxx fcxx/_file
+mode header
+class writer{
+    _FSYS._writer *_writer_;
+    writer(str location){
+        this->_writer_ = new _FSYS._writer(location)
+    }
+    fn write(str data){
+        return this->_writer_->write(data)
+    }
+    fn close(){
+        this->_writer_->close()
+    }
+}
+class reader{
+    _FSYS._reader *_reader_;
+    reader(str location){
+        this->_reader_ = new _FSYS._reader(location)
+    }
+    fn read(){
+        return this->_reader_->read()
+    }
+    fn close(){
+        this->_reader_->close()
+    }
+}

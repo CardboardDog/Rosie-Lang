@@ -1,0 +1,2 @@
+add io/io
+io.out("hello world")

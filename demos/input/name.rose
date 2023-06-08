@@ -1,0 +1,4 @@
+add io/io
+io.out("what is your name? \n>>")
+str name = io.in()
+io.out("\n hello "+name+"!")
