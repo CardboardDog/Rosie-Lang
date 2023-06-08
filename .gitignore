@@ -3,7 +3,8 @@ support/
 __pycache__/
 __ROSIE_BIN__/
 Debugger/bin
-.dblite
+*.dblite
+*.exe
 test.bat
 bin/
 compiler/dist/
