@@ -10,3 +10,4 @@ bin/
 compiler/dist/
 bugs/
 compiler/bin
+installer/obj
