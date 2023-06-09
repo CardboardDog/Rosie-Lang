@@ -5,7 +5,7 @@ import subprocess
 import os
 def getinstall():
     if(getos()=="linux"):
-        return "/usr/local/"
+        return "/usr/bin/"
     if(getos()=="windows"):
         return "C:/Program Files/"
 def initcommand():

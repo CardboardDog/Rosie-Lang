@@ -29,6 +29,9 @@ if(setbuild != "check"):
 else:
     HandleOS.initcommand()
     setbuild = os.environ["compiler"]
+if(os.path.exists(fin)==False):
+    print("error: file dose not exist")
+    exit(1)
 
 if(fin != ""):
     cont = True
