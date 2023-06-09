@@ -11,3 +11,6 @@ compiler/dist/
 bugs/
 compiler/bin
 installer/obj
+installer/dist
+installer/build
+installer/install.spec
