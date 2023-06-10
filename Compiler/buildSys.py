@@ -13,9 +13,9 @@ def cmake(dir,name):
     os.chdir(cwd)
 def scons(dir,name):
     mkfile = open(dir+"\\SConstruct","w")
-    mkfile.write("Program(\""+regex.sub(".rose","",name)+"\",\""+regex.sub(r"\.cxx(\.cxx)*",".cxx",regex.sub(".rose",".cxx",name))+"\")")
+    mkfile.write("Program(\""+regex.sub(".rose","",name)+"\",\""+regex.sub(r"\.cxx(\.cxx)*",".cxx",regex.sub(".rose",".cxx",name)+".exe")+"\")")
     cli.run(["cd \""+dir+"\"","dir","scons -Q"])
 def gcc(dir,name):
-    cli.run(["cd \""+dir+"\"","c++ "+regex.sub(r"\.cxx(\.cxx)*",".cxx",regex.sub(".rose",".cxx",name))+" -o "+regex.sub(".rose","",name)+" -w"])
+    cli.run(["cd \""+dir+"\"","c++ "+regex.sub(r"\.cxx(\.cxx)*",".cxx",regex.sub(".rose",".cxx",name))+" -o "+regex.sub(".rose","",name)+".exe"+" -w"])
 def clang(dir,name):
-    cli.run(["cd \""+dir+"\"","clang++ -Wall -std=c++11 "+regex.sub(r"\.cxx(\.cxx)*",".cxx",regex.sub(".rose",".cxx",name))+" -o "+regex.sub(".rose","",name)])
+    cli.run(["cd \""+dir+"\"","clang++ -Wall -std=c++11 "+regex.sub(r"\.cxx(\.cxx)*",".cxx",regex.sub(".rose",".cxx",name))+" -o "+regex.sub(".rose","",name)+".exe"])
