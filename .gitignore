@@ -8,9 +8,11 @@ Debugger/bin
 test.bat
 bin/
 compiler/dist/
+compiler/build/
 bugs/
 compiler/bin
 installer/obj
 installer/dist
 installer/build
 installer/install.spec
+*.spec
