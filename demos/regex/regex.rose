@@ -1,0 +1,11 @@
+add regex/re
+add io/io
+str base = "Hello world!\n";
+base = re.sub(base,"world","RegEx")
+io.out(base)
+str base2 = "This is a string"
+list str all = re.search(base2,"is .*")
+int length = all.size()
+for(i in length){
+    io.out(all[i])
+}

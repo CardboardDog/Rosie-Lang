@@ -1,0 +1,8 @@
+add hxx inc/_regex
+mode header
+fn sub(str in, str pattern, str replace){
+    return _REGEX._sub(in,pattern,replace)
+}
+fn search(str in, str pattern){
+    return _REGEX._search(in,pattern)
+}
