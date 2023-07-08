@@ -8,7 +8,13 @@ import getH
 import time
 import os
 import regex
-def comp(bdir,fdir,files,clean,rmvf,mode,fin,binmode,fout):
+global isquiet
+def f_err(ig,path,ig2):
+        if(isquiet==False):
+            print("Clean: warning - cannot remove: "+path)
+def comp(bdir,fdir,files,clean,rmvf,mode,fin,binmode,fout,quiet):
+    global isquiet 
+    isquiet = quiet
     if(os.path.exists(fout+"\\"+regex.sub(".rose","",Path(fin).name+".exe"))):
         os.remove(fout+"\\"+regex.sub(".rose","",Path(fin).name+".exe"))
     shutil.copytree(fdir,bdir+"\\"+Path(Path(fin).name).stem,ignore=shutil.ignore_patterns("__ROSIE_BIN__"))
@@ -56,15 +62,15 @@ def comp(bdir,fdir,files,clean,rmvf,mode,fin,binmode,fout):
             shutil.copy2(Path(bdir+"\\"+Path(Path(fin).name).stem).resolve().__str__()+"\\Debug\\"+regex.sub(".rose","",Path(fin).name+".exe"),fout+"\\"+regex.sub(".rose","",Path(fin).name+".exe"))
     else:
         if(os.path.exists(fout+"\\"+Path(fdir).name)):
-            shutil.rmtree(fout+"\\"+Path(fdir).name)
+            shutil.rmtree(fout+"\\"+Path(fdir).name,onerror=f_err)
         shutil.copytree(bdir+"\\"+Path(fdir).name,fout+".exe")
     if(clean):
         while(os.path.exists(fout+"\\"+regex.sub(".rose","",Path(fin).name+".exe"))==False):
             time.sleep(0.2)
         if(os.path.exists(bdir)):
-            shutil.rmtree(Path(bdir).parent.__str__())
+            shutil.rmtree(Path(bdir).parent.__str__(),onerror=f_err)
         for i in rmvf:
             try:
-                shutil.rmtree(fdir+"\\"+Path(fdir+"\\"+Path(i).__str__().split()[0]).stem)
+                shutil.rmtree(fdir+"\\"+Path(fdir+"\\"+Path(i).__str__().split()[0]).stem,onerror=f_err)
             except FileNotFoundError:
                 pass

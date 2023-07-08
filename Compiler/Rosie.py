@@ -15,12 +15,11 @@ from pathlib import Path
 HandleOS.initcommand()
 cont = False
 args = readagrv.read(sys.argv)
+quiet = args[6]
 isdebugged = args[5]
 setbuild = args[4]
 binmode = args[3]
-
 clean = args[2]
-
 fout = args[1]
 fin = args[0]
 mpath = HandleOS.getinstall()+"\\rosie"
@@ -52,7 +51,7 @@ if(cont):
         if(debug.returncode):
             exit(1)
     builds[0].append(Path(fin).name)
-    compA.comp(tmpdir,Path(fin).parent.__str__(),builds[0],clean,builds[1],setbuild,fin,binmode,fout)
+    compA.comp(tmpdir,Path(fin).parent.__str__(),builds[0],clean,builds[1],setbuild,fin,binmode,fout,quiet)
 sys.exit(0)
 #    cdata = getH.gH(fin)
 #    cfile = getC.cF(cdata[2],cdata[0],Path(fin).stem)
