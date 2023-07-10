@@ -30,7 +30,7 @@ else:
     setbuild = os.environ["compiler"]
 if(os.path.exists(fin)==False):
     print("error: file dose not exist")
-    exit(1)
+    sys.exit(1)
 
 if(fin != ""):
     cont = True
@@ -49,7 +49,7 @@ if(cont):
         while(debug.poll()==None):
             time.sleep(0.2)
         if(debug.returncode):
-            exit(1)
+            sys.exit(1)
     builds[0].append(Path(fin).name)
     compA.comp(tmpdir,Path(fin).parent.__str__(),builds[0],clean,builds[1],setbuild,fin,binmode,fout,quiet)
 sys.exit(0)

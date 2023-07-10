@@ -6,6 +6,7 @@ import getC
 import buildSys
 import getH
 import time
+import sys
 import os
 import regex
 global isquiet
@@ -39,7 +40,7 @@ def comp(bdir,fdir,files,clean,rmvf,mode,fin,binmode,fout,quiet):
             except:
                 readf.close()
                 print("Error no namespace defined in file: "+Path(fpath).parent.__str__()+"\\"+Path(i).__str__()+".hxx")
-                exit(1)
+                sys.exit(1)
             readf.close()
         for i in hxxnamespaces:
             cfile[0] = regex.sub(i+r"\.([^\w]*)",i+r"::\1",cfile[0])
