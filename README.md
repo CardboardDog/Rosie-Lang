@@ -1,5 +1,5 @@
 # Rosie
-Rosie is a compiled and object-oriented programming language designed to be simpler than c++, without loosing preformance. For example, a simple hello world in c++ requires:
+Rosie is a compiled and object-oriented programming language designed to be simpler than c++, without loosing performance. For example, a simple hello world in c++ requires:
 ```
 #include <iostream>
 int main(){
