@@ -23,9 +23,10 @@ def initcommand():
     if(subprocess.getstatusoutput("g++ --help")[0] == 0):
         os.environ["compiler"] = "gcc"
         return
-    if(subprocess.getstatusoutput("clang")[0] == 0):
+    """if(subprocess.getstatusoutput("clang")[0] == 0):
         os.environ["compiler"] = "clang"
         return
+    """
 def getcompiler(fname,bdir):
     if(os.environ["compiler"]=="make"):
         command = [

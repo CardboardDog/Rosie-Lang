@@ -56,7 +56,7 @@ def cF(fl, hdrs, name, repl, define, hxx):
         nwfl = re.sub(r"mode header",r"",nwfl)
     # add includes
     for i in hdrs:
-        nwfl = "#include \""+i+".hxx\"\n"+nwfl
+        nwfl = "#include <"+i+".hxx>\n"+nwfl
     for i in hxx:
         nwfl = "#include \""+i+".hxx\"\n"+nwfl
     nwfl = "#include<vector>\n"+nwfl

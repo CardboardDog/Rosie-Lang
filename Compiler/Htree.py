@@ -24,11 +24,12 @@ def Htree(pth,fl,libpth):
             if(Path(pth+"\\"+i+".rose").exists()):
                 for ii in getH.gH(pth+"\\"+i+".rose")[0]:
                     nwhdrs.append(ii)
+            else:
+                pass
         tmphdrs = nwhdrs
         if(nwhdrs == []):
             rtrn = False
         else:
             for i in nwhdrs:
-                if(Path(pth+"\\"+i+".rose").exists()):
-                    allhdrs.append(i)
+                allhdrs.append(i)
     return allhdrs,rmvltr

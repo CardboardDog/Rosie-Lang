@@ -15,7 +15,7 @@ def scons(dir,name):
     mkfile = open(dir+"\\SConstruct","w")
     mkfile.write("Program(\""+regex.sub(".rose","",name)+"\",\""+regex.sub(r"\.cxx(\.cxx)*",".cxx",regex.sub(".rose",".cxx",name)+".exe")+"\")")
     cli.run(["cd \""+dir+"\"","dir","scons -Q"])
-def gcc(dir,name):
-    cli.run(["cd \""+dir+"\"","c++ "+regex.sub(r"\.cxx(\.cxx)*",".cxx",regex.sub(".rose",".cxx",name))+" -o "+regex.sub(".rose","",name)+".exe"+" -w"])
+def gcc(dir,name,istr):
+    cli.run(["cd \""+dir+"\"","c++ "+regex.sub(r"\.cxx(\.cxx)*",".cxx",regex.sub(".rose",".cxx",name))+" -o "+regex.sub(".rose","",name)+".exe "+istr+" -w"])
 def clang(dir,name):
     cli.run(["cd \""+dir+"\"","clang++ -Wall -std=c++11 "+regex.sub(r"\.cxx(\.cxx)*",".cxx",regex.sub(".rose",".cxx",name))+" -o "+regex.sub(".rose","",name)+".exe"])

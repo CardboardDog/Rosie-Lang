@@ -1,0 +1,6 @@
+add io/io
+add files/file_system
+mode header
+fn hello(){
+    io.out("hi")
+}

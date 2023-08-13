@@ -1,0 +1,4 @@
+add headers/2inc
+add io/io
+2inc.hello()
+io.out("\nhello")
