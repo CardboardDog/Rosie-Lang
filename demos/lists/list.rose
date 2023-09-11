@@ -1,0 +1,5 @@
+add io/io
+list str test = ["q","w","e","r","t","y"]
+io.out(["a","s","d","f","g","h"])
+io.out(test)
+@ do not compile this, this is a conversion demo (check getC.py 44-45)

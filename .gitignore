@@ -16,3 +16,8 @@ installer/dist
 installer/build
 installer/install.spec
 *.spec
+dist
+bin.zip
+make.bat
+zip
+installer

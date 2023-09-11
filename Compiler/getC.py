@@ -40,6 +40,9 @@ def cF(fl, hdrs, name, repl, define, hxx):
     nwfl = re.sub(r";+",r";",nwfl)
     # fix :; bug
     nwfl = re.sub(r"public:;","public:",nwfl)
+    # replace rosie lists with c++ arrays
+    nwfl = re.sub(r"\[(\d+)(,)","{\1\2",nwfl)
+    nwfl = re.sub(r"({(\d+,)+\d+)(])","\1}",nwfl)
     # convert functions to autos/lambda
     if(not ishdr):
         nwfl = re.sub(r"fn",r"auto",nwfl)

@@ -24,7 +24,7 @@ class hello{
     }
 }
 hello say = hello("hello")
-list str mylist = ["a","b","c","d"];
+list str mylist = ["a","b","c","d"]
 for(i in 4){
     io.out(mylist[i])
 }
