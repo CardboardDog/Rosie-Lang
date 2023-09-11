@@ -77,11 +77,17 @@ def comp(bdir,fdir,files,clean,rmvf,mode,fin,binmode,fout,quiet):
             shutil.copy2(Path(bdir+"\\"+Path(Path(fin).name).stem).resolve().__str__()+"\\Debug\\"+regex.sub(".rose","",Path(fin).name+".exe"),fout+"\\"+regex.sub(".rose","",Path(fin).name+".exe"))
     else:
         if(os.path.exists(fout+"\\"+Path(fdir).name)):
-            shutil.rmtree(fout+"\\"+Path(fdir).name,onerror=f_err)
-        shutil.copytree(bdir+"\\"+Path(fdir).name,fout+".exe")
+            if(clean):
+                if(not fout+"\\"+Path(fdir).name == ".\\" and not fout+"\\"+Path(fdir).name == "./" and fout+"\\"+Path(fdir).name == "."):
+                    shutil.rmtree(fout+"\\"+Path(fdir).name,onerror=f_err)
+        try:
+            shutil.copytree(bdir+"\\"+Path(fdir).name,fout+".exe")
+        except:
+            pass
     if(clean):
-        while(os.path.exists(fout+"\\"+regex.sub(".rose","",Path(fin).name+".exe"))==False):
-            time.sleep(0.2)
+        if(binmode):
+            while(os.path.exists(fout+"\\"+regex.sub(".rose","",Path(fin).name+".exe"))==False):
+                time.sleep(0.2)
         if(os.path.exists(bdir)):
             shutil.rmtree(Path(bdir).parent.__str__(),onerror=f_err)
         for i in rmvf:
